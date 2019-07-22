@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/action_accept"
+        android:icon="@drawable/ic_check_circle"
+        android:title="@string/menu_item_accept" />
+    <item
+        android:id="@+id/action_proses"
+        android:icon="@drawable/ic_check_circle"
+        android:title="@string/menu_item_proses"/>
+    <item
+        android:id="@+id/action_done"
+        android:icon="@drawable/ic_check_circle"
+        android:title="@string/menu_item_done" />
+    <item
+        android:id="@+id/action_paid"
+        android:icon="@drawable/ic_check_circle"
+        android:title="@string/menu_item_paid" />
+    <item
+        android:id="@+id/action_deliver"
+        android:icon="@drawable/ic_check_circle"
+        android:title="@string/menu_item_deliver" />
+    <item
+        android:id="@+id/action_all"
+        android:icon="@drawable/ic_check_circle"
+        android:title="@string/menu_item_all" />
+</menu>

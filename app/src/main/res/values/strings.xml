@@ -1,0 +1,49 @@
+<resources>
+    <string name="app_name">CourierApp</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="menu_item_accept">Accept</string>
+    <string name="menu_item_proses">Proses</string>
+    <string name="menu_item_done">Done</string>
+    <string name="menu_item_paid">Paid</string>
+    <string name="menu_item_deliver">Deliver</string>
+    <string name="menu_item_all">All</string>
+    <string name="biasa">Biasa</string>
+    <string name="express">Express</string>
+    <string name="kilat">Kilat</string>
+    <string name="profile">Profile</string>
+
+    <string name="email_edt_txt">E-mail&#8230;</string>
+    <string name="pass_edt_text">Password&#8230;</string>
+    <string name="login_btn">Login</string>
+
+    <string name="some_error">Some Error Occurred!</string>
+
+    <!--Login Validation-->
+    <string name="empty_email">Please provide a non empty email.</string>
+    <string name="invalid_email">Please provide a valid email.</string>
+    <string name="empty_password">Please provide a non empty password.</string>
+
+    <!--order fragment button text-->
+    <string name="tentang">Tentang</string>
+    <string name="normal_btn">NORMAL</string>
+    <string name="express_btn">EXPRESS</string>
+    <string name="kilat_btn">KILAT</string>
+    <string name="desc_text">Catatan...</string>
+    <string name="confirm_order_btn">CONFIRM</string>
+    <string name="detail_jumlah_pakaian">Detail Jumlah Pakaian</string>
+    <string name="alamat_pengiriman">Alamat Pengiriman</string>
+    <string name="waktu_selesai">Waktu Selesai</string>
+    <string name="waktu_pemesanan">Waktu Pemesanan</string>
+    <string name="tipe_laundry">Tipe Laundry</string>
+    <string name="detail_pesanan">Detail Pesanan</string>
+    <string name="tiga_titik">...</string>
+    <string name="tulis_catatan">Tulis Catatan</string>
+
+    <integer name="btn_plus_view">1</integer>
+    <integer name="btn_plus_pos">2</integer>
+    <integer name="btn_minus_view">3</integer>
+    <integer name="btn_minus_pos">4</integer>
+</resources>

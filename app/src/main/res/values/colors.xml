@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+
+    <color name="biruLaut">#2699FB</color>
+    <color name="biruLaut1">#3FA4FA</color>
+    <color name="biruMuda">#F1F9FF</color>
+    <color name="putih">#FFFFFF</color>
+    <color name="biruBorder">#BCE0FD</color>
+    <color name="biruGelap">#0270CE</color>
+
+    <color name="black_effective">#b7b7b7</color>
+
+    <color name="abuabu">#A7A6A6</color>
+
+    <color name="abuabu1">#F7F6F6</color>
+
+    <color name="abuabu2">#EEEEEE</color>
+
+    <color name="abuabu3">#A5A5A5</color>
+
+    <color name="backgroundApp">#d6eeff</color>
+    <color name="basicColor">#2699FB</color>
+    <color name="hitam">#2B2B2B</color>
+
+    <color name="merah">#FF0000</color>
+
+    <color name="biru_u3">#0387C3</color>
+</resources>

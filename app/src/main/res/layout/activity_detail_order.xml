@@ -1,0 +1,857 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/biruMuda"
+    tools:context=".ActivityOrderDetail.ui.DetailOrderActivity">
+
+    <ProgressBar
+        android:id="@+id/order_detail_progress"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="8dp"
+        android:indeterminate="true"
+        android:visibility="visible" />
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/detailOrderToolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@color/putih"
+                app:titleTextAppearance="@style/Toolbar.TitleText"
+                app:layout_scrollFlags="scroll|enterAlways"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                app:title="Detail"
+                app:titleTextColor="@color/hitam" />
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="8dp"
+                    android:background="@color/putih">
+
+                    <TextView
+                        android:id="@+id/no_order"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginStart="24dp"
+                        android:layout_marginTop="10dp"
+                        android:text="No laundry"
+                        android:textColor="@color/biruLaut"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/no_order_txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="24dp"
+                        android:text="--"
+                        android:textColor="@color/biruLaut"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/name_order"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/no_order"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginStart="24dp"
+                        android:layout_marginTop="8dp"
+                        android:text="Nama"
+                        android:textColor="@color/biruLaut"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/name_order_txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/no_order"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginStart="24dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="24dp"
+                        android:text="--"
+                        android:textColor="@color/biruLaut"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/dormitory_order"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/name_order"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginStart="24dp"
+                        android:layout_marginTop="8dp"
+                        android:text="Dormitory"
+                        android:textColor="@color/biruLaut"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/dormitory_order_txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/name_order"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginStart="24dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="24dp"
+                        android:text="--"
+                        android:textColor="@color/biruLaut"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/room_order"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/dormitory_order"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginStart="24dp"
+                        android:layout_marginTop="8dp"
+                        android:text="Room"
+                        android:textColor="@color/biruLaut"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/room_order_txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/dormitory_order"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginStart="24dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="24dp"
+                        android:text="--"
+                        android:textColor="@color/biruLaut"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/no_phone_order"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/room_order"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginStart="24dp"
+                        android:layout_marginTop="8dp"
+                        android:text="Phone number"
+                        android:textColor="@color/biruLaut"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/no_phone_order_txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/room_order"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginStart="24dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="24dp"
+                        android:text="--"
+                        android:textColor="@color/biruLaut"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/status_order"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/no_phone_order"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginStart="24dp"
+                        android:layout_marginTop="8dp"
+                        android:text="Status"
+                        android:textColor="@color/biruLaut"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/status_order_txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/no_phone_order"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginStart="24dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="24dp"
+                        android:text="--"
+                        android:textColor="@color/biruLaut"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tgl_pesan_order"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/status_order"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginStart="24dp"
+                        android:layout_marginTop="8dp"
+                        android:text="Tanggal pesan"
+                        android:textColor="@color/biruLaut"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/tgl_pesan_order_txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/status_order"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginStart="24dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="24dp"
+                        android:text="--"
+                        android:textColor="@color/biruLaut"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tgl_selesai_order"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tgl_pesan_order"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginStart="24dp"
+                        android:layout_marginTop="8dp"
+                        android:text="Tanggal selesai"
+                        android:textColor="@color/biruLaut"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/tgl_selesai_order_txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tgl_pesan_order"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginStart="24dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="24dp"
+                        android:text="--"
+                        android:textColor="@color/biruLaut"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/typeRel"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_below="@+id/timeDetailRel"
+                    android:layout_marginTop="8dp"
+                    android:background="@color/putih">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="24dp"
+                        android:text="Tipe Laundry"
+                        android:textColor="@color/biruLaut" />
+
+                    <TextView
+                        android:id="@+id/laudnryType"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="24dp"
+                        android:text="--"
+                        android:textColor="@color/biruLaut"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/weightRel"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_below="@+id/typeRel"
+                    android:layout_marginTop="8dp"
+                    android:background="@color/putih">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="24dp"
+                        android:text="Berat"
+                        android:textColor="@color/biruLaut" />
+
+                    <TextView
+                        android:id="@+id/laudryWeight"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toStartOf="@+id/laudryWeightKg"
+                        android:text="-- "
+                        android:textColor="@color/biruLaut"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/laudryWeightKg"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="24dp"
+                        android:text=" Kg"
+                        android:textColor="@color/biruLaut"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/originalPriceRel"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_below="@+id/weightRel"
+                    android:layout_marginTop="8dp"
+                    android:background="@color/putih">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="24dp"
+                        android:text="Harga"
+                        android:textColor="@color/biruLaut" />
+
+                    <TextView
+                        android:id="@+id/originalPriceRp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toStartOf="@+id/originalPrice"
+                        android:text="Rp."
+                        android:textColor="@color/biruLaut"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/originalPrice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="24dp"
+                        android:text="--"
+                        android:textColor="@color/biruLaut"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/diskonRel"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_below="@+id/originalPriceRel"
+                    android:layout_marginTop="8dp"
+                    android:background="@color/putih">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="24dp"
+                        android:text="Diskon"
+                        android:textColor="@color/biruLaut" />
+
+                    <TextView
+                        android:id="@+id/laudryDiskon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toStartOf="@+id/laudryDiskonPrsn"
+                        android:text="--"
+                        android:textColor="@color/biruLaut"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/laudryDiskonPrsn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="24dp"
+                        android:text="%"
+                        android:textColor="@color/biruLaut"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/priceRel"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_below="@+id/diskonRel"
+                    android:layout_marginTop="8dp"
+                    android:background="@color/putih">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="24dp"
+                        android:text="Total Harga"
+                        android:textColor="@color/biruLaut" />
+
+                    <TextView
+                        android:id="@+id/laundryPriceRp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toStartOf="@+id/laundryPrice"
+                        android:text="Rp."
+                        android:textColor="@color/biruLaut"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/laundryPrice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="24dp"
+                        android:text="--"
+                        android:textColor="@color/biruLaut"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/catatanRel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/diskonRel"
+                    android:layout_marginTop="8dp"
+                    android:background="@color/putih">
+
+                    <TextView
+                        android:id="@+id/catatan_order"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="24dp"
+                        android:layout_marginTop="12dp"
+                        android:text="Catatan"
+                        android:textColor="@color/biruLaut" />
+
+                    <TextView
+                        android:id="@+id/catatan_txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/catatan_order"
+                        android:layout_marginStart="25dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="25dp"
+                        android:layout_marginBottom="12dp"
+                        android:text="--" />
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:id="@+id/inputWeightRel"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:layout_below="@+id/diskonRel"
+                    android:layout_marginTop="8dp"
+                    android:background="@color/putih"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:id="@+id/weightLin"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="23dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginTop="9dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/text_input_dormitory"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:errorEnabled="true">
+
+                            <EditText
+                                android:id="@+id/inputWeightEdt"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="Input weight"
+                                android:enabled="false"
+                                android:inputType="number"
+                                android:textSize="14sp" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+                    </LinearLayout>
+
+                    <RelativeLayout
+                        android:layout_width="55dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginEnd="24dp">
+
+                        <Button
+                            android:id="@+id/saveWeightBtn"
+                            android:layout_width="55dp"
+                            android:layout_height="35dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:background="@drawable/btn_ok_background_enable"
+                            android:text="SAVE"
+                            android:textColor="@color/putih" />
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:id="@+id/konfirmasiRel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/diskonRel"
+                    android:layout_marginTop="8dp"
+                    android:background="@color/putih">
+
+                    <RelativeLayout
+                        android:id="@+id/indicator_rel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="24dp"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginBottom="12dp">
+
+                        <View
+                            android:id="@+id/acceptIndicator"
+                            android:layout_width="@dimen/indicator_width"
+                            android:layout_height="@dimen/indicator_height"
+                            android:background="@drawable/circle_view_border" />
+
+                        <View
+                            android:id="@+id/acceptLine"
+                            android:layout_width="3dp"
+                            android:layout_height="30dp"
+                            android:layout_below="@+id/acceptIndicator"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerVertical="true"
+                            android:background="@drawable/rectangle_view_border" />
+
+                        <View
+                            android:id="@+id/prosesIndicator"
+                            android:layout_width="@dimen/indicator_width"
+                            android:layout_height="@dimen/indicator_height"
+                            android:layout_below="@+id/acceptLine"
+                            android:background="@drawable/circle_view_border" />
+
+                        <View
+                            android:id="@+id/prosesLine"
+                            android:layout_width="3dp"
+                            android:layout_height="30dp"
+                            android:layout_below="@+id/prosesIndicator"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerVertical="true"
+                            android:background="@drawable/rectangle_view_border" />
+
+                        <View
+                            android:id="@+id/doneIndicator"
+                            android:layout_width="@dimen/indicator_width"
+                            android:layout_height="@dimen/indicator_height"
+                            android:layout_below="@+id/prosesLine"
+                            android:background="@drawable/circle_view_border" />
+
+                        <View
+                            android:id="@+id/doneLine"
+                            android:layout_width="3dp"
+                            android:layout_height="30dp"
+                            android:layout_below="@+id/doneIndicator"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerVertical="true"
+                            android:background="@drawable/rectangle_view_border" />
+
+                        <View
+                            android:id="@+id/paidIndicator"
+                            android:layout_width="@dimen/indicator_width"
+                            android:layout_height="@dimen/indicator_height"
+                            android:layout_below="@+id/doneLine"
+                            android:background="@drawable/circle_view_border" />
+
+                        <View
+                            android:id="@+id/paidLine"
+                            android:layout_width="3dp"
+                            android:layout_height="30dp"
+                            android:layout_below="@+id/paidIndicator"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerVertical="true"
+                            android:background="@drawable/rectangle_view_border" />
+
+                        <View
+                            android:id="@+id/deliveredIndicator"
+                            android:layout_width="@dimen/indicator_width"
+                            android:layout_height="@dimen/indicator_height"
+                            android:layout_below="@+id/paidLine"
+                            android:background="@drawable/circle_view_border" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/acceptRel"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:layout_marginStart="24dp"
+                        android:layout_marginTop="12dp"
+                        android:layout_toEndOf="@+id/indicator_rel">
+
+                        <TextView
+                            android:id="@+id/accept"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Accept"
+                            android:textColor="@color/biruLaut" />
+
+                        <TextView
+                            android:id="@+id/acceptTxt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/accept"
+                            android:layout_marginEnd="100dp"
+                            android:text="Klick ok ketika anda telah mengambil pakain yang akan di launry
+pada alamat kamar yang tertera"
+                            android:textColor="@color/abuabu"
+                            android:textSize="12sp" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginEnd="24dp"
+                            android:background="@color/biruMuda" />
+
+                        <Button
+                            android:id="@+id/acceptOkBtn"
+                            android:layout_width="55dp"
+                            android:layout_height="35dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginEnd="24dp"
+                            android:background="@drawable/btn_ok_background_enable"
+                            android:text="OK"
+                            android:textColor="@color/putih" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/onProsesRel"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:layout_below="@+id/acceptRel"
+                        android:layout_marginStart="24dp"
+                        android:layout_toEndOf="@+id/indicator_rel">
+
+                        <TextView
+                            android:id="@+id/proses"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="On proses"
+                            android:textColor="@color/biruLaut" />
+
+                        <TextView
+                            android:id="@+id/prosesTxt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/proses"
+                            android:layout_marginEnd="100dp"
+                            android:text="Dikonfirmasi oleh admin ketika pakaian laundry  telah sampai di
+tempat laundry, telah di timbang dan di beri harga"
+                            android:textColor="@color/abuabu"
+                            android:textSize="12sp" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginEnd="24dp"
+                            android:background="@color/biruMuda" />
+
+                        <Button
+                            android:visibility="gone"
+                            android:id="@+id/prosesOkBtn"
+                            android:layout_width="55dp"
+                            android:layout_height="35dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginEnd="24dp"
+                            android:background="@drawable/btn_ok_background_enable"
+                            android:text="OK"
+                            android:textColor="@color/putih" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/doneRel"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:layout_below="@+id/onProsesRel"
+                        android:layout_marginStart="24dp"
+                        android:layout_toEndOf="@+id/indicator_rel">
+
+                        <TextView
+                            android:id="@+id/done"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Done"
+                            android:textColor="@color/biruLaut" />
+
+                        <TextView
+                            android:id="@+id/doneTxt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/done"
+                            android:layout_marginEnd="100dp"
+                            android:text="Dikonfirmasi oleh admin  ketika pakaian laundry telah selesai
+diproses dan siap diantar"
+                            android:textColor="@color/abuabu"
+                            android:textSize="12sp" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginEnd="24dp"
+                            android:background="@color/biruMuda" />
+
+                        <Button
+                            android:id="@+id/doneOkBtn"
+                            android:layout_width="55dp"
+                            android:layout_height="35dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginEnd="24dp"
+                            android:background="@drawable/btn_ok_background_enable"
+                            android:text="OK"
+                            android:textColor="@color/putih" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/paidRel"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:layout_below="@+id/doneRel"
+                        android:layout_marginStart="24dp"
+                        android:layout_toEndOf="@+id/indicator_rel">
+
+                        <TextView
+                            android:id="@+id/paid"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Paid"
+                            android:textColor="@color/biruLaut" />
+
+                        <TextView
+                            android:id="@+id/paidTxt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/paid"
+                            android:layout_marginEnd="72dp"
+                            android:text="Klick ok ketika pakaian laundry telah lunas dibayar"
+                            android:textColor="@color/abuabu"
+                            android:textSize="12sp" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginEnd="24dp"
+                            android:background="@color/biruMuda" />
+
+                        <Button
+                            android:id="@+id/paidOkBtn"
+                            android:layout_width="55dp"
+                            android:layout_height="35dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginEnd="24dp"
+                            android:background="@drawable/btn_ok_background_enable"
+                            android:text="OK"
+                            android:textColor="@color/putih" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/deliveredRel"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:layout_below="@+id/paidRel"
+                        android:layout_marginStart="24dp"
+                        android:layout_toEndOf="@+id/indicator_rel">
+
+                        <TextView
+                            android:id="@+id/deliver"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Deliver"
+                            android:textColor="@color/biruLaut" />
+
+                        <TextView
+                            android:id="@+id/deliverTxt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/deliver"
+                            android:layout_marginEnd="100dp"
+                            android:text="Klick ok ketika pakaian laundry telah diantarkan kembali
+ke pelanggan"
+                            android:textColor="@color/abuabu"
+                            android:textSize="12sp" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginEnd="24dp"
+                            android:background="@color/biruMuda" />
+
+                        <Button
+                            android:id="@+id/deliverOkBtn"
+                            android:layout_width="55dp"
+                            android:layout_height="35dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginEnd="24dp"
+                            android:background="@drawable/btn_ok_background_enable"
+                            android:text="OK"
+                            android:textColor="@color/putih" />
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+                <Button
+                    android:id="@+id/askCostumerBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/konfirmasiRel"
+                    android:layout_marginTop="12dp"
+                    android:background="@color/putih"
+                    android:text="ASK ADMIN"
+                    android:textColor="@color/biruLaut" />
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</LinearLayout>
