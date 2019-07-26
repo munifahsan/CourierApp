@@ -33,7 +33,7 @@ public class DetailOrderPresenter implements DetailOrderPresenterMvp {
                 onInputError(event.getErrorMessage());
                 break;
             case DetailOrderEvents.onGetDataSuccess:
-                onGetDataSucces(event.getName(), event.getDormitory(), event.getRoom(), event.getPhone(), event.getStatus(), event.getDataTimeNow(), event.getDataTimeDone(), event.getDataJenis(), event.getDataWeight(), event.getDataPrice(), event.getDataDiskon(), event.getDataDesc(), event.getDataAccept(), event.getDataOnProses(), event.getDataDone(), event.getDataPaid(), event.getDataDelivered());
+                onGetDataSucces(event.getName(), event.getDormitory(), event.getRoom(), event.getPhone(), event.getStatus(), event.getDataTimeNow(), event.getDataTimeDone(), event.getDataJenis(), event.getDataWeight(), event.getDataPrice(), event.getDataDiskon(), event.getDataDesc(), event.getDataAccept(), event.getDataOnProses(), event.getDataDone(), event.getDataPaid(), event.getDataPaidConfirm(), event.getDataDelivered(), event.getDataDeliveredConfirm());
                 Log.d("name event main", "" + event.getName());
                 break;
             case DetailOrderEvents.onGetDataError:
@@ -52,10 +52,10 @@ public class DetailOrderPresenter implements DetailOrderPresenterMvp {
                                 String jenis, String weight, String price, String diskon, String catatan,
                                 String dataAccept, String dataOnProses,
                                 String dataDone, String dataPaid,
-                                String delivered) {
+                                String paidConfirm, String delivered, String deliverConfirm) {
         if (mDetailOrderViewMvp != null) {
-            setIndicator(dataAccept, dataOnProses, dataDone, dataPaid, delivered);
-            setButton(dataAccept, dataOnProses, dataDone, dataPaid, delivered);
+            setIndicator(dataAccept, dataOnProses, dataDone, dataPaid, paidConfirm, delivered, deliverConfirm);
+            setButton(dataAccept, dataOnProses, dataDone, dataPaid, paidConfirm, delivered, deliverConfirm);
             mDetailOrderViewMvp.setNameTxt(name);
             mDetailOrderViewMvp.setDormitoryTxt(dormitory);
             mDetailOrderViewMvp.setRoomTxt(room);
@@ -152,7 +152,7 @@ public class DetailOrderPresenter implements DetailOrderPresenterMvp {
         }
     }
 
-    public void setIndicator(String dataAccept, String dataOnProses, String dataDone, String dataPaid, String delivered) {
+    public void setIndicator(String dataAccept, String dataOnProses, String dataDone, String dataPaid, String paidConfirm, String delivered, String deliverConfirm) {
         String string1 = "1";
         if (dataAccept.equals(string1)) {
             mDetailOrderViewMvp.setAcceptIndicatorCheck();
@@ -172,63 +172,109 @@ public class DetailOrderPresenter implements DetailOrderPresenterMvp {
             mDetailOrderViewMvp.setDoneIndicatorUnCheck();
         }
 
-        if (dataPaid.equals(string1)) {
+        if (dataPaid.equals(string1) && paidConfirm.equals(string1)) {
             mDetailOrderViewMvp.setPaidIndicatorCheck();
         } else {
             mDetailOrderViewMvp.setPaidIndicatorUnCheck();
         }
 
-        if (delivered.equals(string1)) {
+        if (delivered.equals(string1) && deliverConfirm.equals(string1)) {
             mDetailOrderViewMvp.setDeliveredIndicatorCheck();
         } else {
             mDetailOrderViewMvp.setDeliveredIndicatorUnCheck();
         }
     }
 
-    public void setButton(String dataAccept, String dataOnProses, String dataDone, String dataPaid, String delivered) {
-        String string1 = "1";
-        if (dataAccept.equals(string1)) {
+    public void setButton(String dataAccept, String dataOnProses, String dataDone, String dataPaid, String paidConfirm, String delivered, String deliverConfirm) {
+
+        setAcceptButton(dataAccept);
+
+        setProsesButton(dataAccept, dataOnProses);
+
+        setDoneButton(dataDone, dataOnProses);
+
+        setPaidButton(dataDone, dataPaid, paidConfirm);
+
+        setDeliverButton(dataPaid, paidConfirm, delivered, deliverConfirm);
+
+        setWeightButton(dataAccept, dataOnProses);
+    }
+
+    public void setAcceptButton(String dataAccept) {
+        String exist = "1";
+        String empty = "";
+        if (dataAccept.equals(exist)) {
             mDetailOrderViewMvp.setAcceptOkBtnDisable();
         } else {
             mDetailOrderViewMvp.setAcceptOkBtnEnable();
         }
+    }
 
-        if (dataOnProses.equals(string1)) {
+    public void setProsesButton(String dataAccept, String dataOnProses) {
+        String exist = "1";
+        String empty = "";
+        if (dataOnProses.equals(exist)) {
             mDetailOrderViewMvp.setProsesOkBtnDisable();
-        } else if (!dataAccept.equals(string1)) {
+        } else if (!dataAccept.equals(exist)) {
             mDetailOrderViewMvp.setProsesOkBtnDisable();
         } else {
             mDetailOrderViewMvp.setProsesOkBtnEnable();
         }
+    }
 
-        if (dataDone.equals(string1)) {
+    public void setDoneButton(String dataDone, String dataOnProses) {
+        String exist = "1";
+        String empty = "";
+        if (dataDone.equals(exist)) {
             mDetailOrderViewMvp.setDoneOkBtnDisable();
-        } else if (!dataOnProses.equals(string1)) {
+        } else if (!dataOnProses.equals(exist)) {
             mDetailOrderViewMvp.setDoneOkBtnDisable();
         } else {
             mDetailOrderViewMvp.setDoneOkBtnEnable();
         }
+    }
 
-        if (dataPaid.equals(string1)) {
-            mDetailOrderViewMvp.setPaidOkBtnDisable();
-        } else if (!dataDone.equals(string1)) {
-            mDetailOrderViewMvp.setPaidOkBtnDisable();
-        } else {
+    public void setPaidButton(String dataDone, String dataPaid, String dataPaidConfrim) {
+        String exist = "1";
+        String empty = "";
+        if (dataPaid.equals(exist) && dataPaidConfrim.equals(empty)) {
             mDetailOrderViewMvp.setPaidOkBtnEnable();
-        }
-
-        if (delivered.equals(string1)) {
-            mDetailOrderViewMvp.setDeliverOkBtnDisable();
-        } else if (!dataPaid.equals(string1)) {
-            mDetailOrderViewMvp.setDeliverOkBtnDisable();
+            mDetailOrderViewMvp.setConfirmPaidBtnTxt("KONFIRMASI TELAH DIBAYAR");
+        } else if (dataPaid.equals(exist) && dataPaidConfrim.equals(exist)) {
+            mDetailOrderViewMvp.setPaidOkBtnDisable();
+            mDetailOrderViewMvp.setConfirmPaidBtnTxt("SELESAI DIBAYAR");
         } else {
-            mDetailOrderViewMvp.setDeliverOkBtnEnable();
+            mDetailOrderViewMvp.setPaidOkBtnDisable();
+            mDetailOrderViewMvp.setConfirmPaidBtnTxt("MENUNGGU KONFIRMASI PELANGGAN");
         }
+    }
 
-        if (dataAccept.equals(string1)) {
+    public void setDeliverButton(String dataPaid, String dataPaidConfrim, String delivered, String deliverConfirm) {
+        String exist = "1";
+        String empty = "";
+        if (dataPaidConfrim.equals(exist) && delivered.equals(empty) && deliverConfirm.equals(empty)) {
+            mDetailOrderViewMvp.setDeliverOkBtnEnable();
+            mDetailOrderViewMvp.setConfirmDeliverBtnTxt("KONFIRMASI TELAH DIANTAR");
+        } else if (delivered.equals(exist) && deliverConfirm.equals(exist)){
+            mDetailOrderViewMvp.setDeliverOkBtnDisable();
+            mDetailOrderViewMvp.setConfirmDeliverBtnTxt("SELESAI DIANTAR");
+        } else if (delivered.equals(exist) && deliverConfirm.equals(empty)){
+            mDetailOrderViewMvp.setDeliverOkBtnDisable();
+            mDetailOrderViewMvp.setConfirmDeliverBtnTxt("MENUNGGU KONFIRMASI PELANGGAN");
+        } else if (delivered.equals(empty) && deliverConfirm.equals(empty)){
+            mDetailOrderViewMvp.setDeliverOkBtnDisable();
+            mDetailOrderViewMvp.setConfirmDeliverBtnTxt("KONFIRMASI TELAH DIANTAR");
+        }
+    }
+
+    public void setWeightButton(String dataAccept, String dataOnProses) {
+        String exist = "1";
+        String empty = "";
+
+        if (dataAccept.equals(exist)) {
             mDetailOrderViewMvp.setSaveWeightBtnEnable();
             mDetailOrderViewMvp.setSaveWeightEdtEnable();
-            if (dataOnProses.equals(string1)) {
+            if (dataOnProses.equals(exist)) {
                 mDetailOrderViewMvp.setSaveWeightBtnDisable();
                 mDetailOrderViewMvp.setSaveWeightEdtDisable();
             }

@@ -331,6 +331,14 @@ public class DetailOrderActivity extends AppCompatActivity implements DetailOrde
         mDeliverOkBtn.setTextColor(getResources().getColor(R.color.putih));
     }
 
+    public void setConfirmPaidBtnTxt(String txt){
+        mPaidOkBtn.setText(txt);
+    }
+
+    public void setConfirmDeliverBtnTxt(String txt){
+        mDeliverOkBtn.setText(txt);
+    }
+
     public void setSaveWeightBtnDisable() {
         mSaveWeightBtn.setEnabled(false);
         mSaveWeightBtn.setBackgroundResource(R.drawable.btn_ok_background_disable);

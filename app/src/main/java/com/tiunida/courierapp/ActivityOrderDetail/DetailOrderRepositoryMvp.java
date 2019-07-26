@@ -20,7 +20,7 @@ public interface DetailOrderRepositoryMvp {
                    String dataCelanaLevis, String dataKaosKaki,
                    String dataJasAlmamater, String dataJas, String dataSelimutBesar, String dataSelimutKecil, String dataBagCover,
                    String dataGordengKecil, String dataGordengBesar, String dataSepatu, String dataBantal, String dataTasKecil, String dataTasBesar,
-                   String dataSpreiKecil, String dataSpreiBesar, String dataAccept, String dataOnProses, String dataDone, String dataPaid, String delivered);
+                   String dataSpreiKecil, String dataSpreiBesar, String dataAccept, String dataOnProses, String dataDone, String dataPaid, String dataPaidConfirm, String delivered, String deliveredConfirm);
 
     void postEvent(int type, String errorMessage);
 

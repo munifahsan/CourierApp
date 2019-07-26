@@ -71,7 +71,7 @@ public class KilatAdapter extends FirestoreRecyclerAdapter<KilatModel, KilatAdap
             holder.mDoneLine.setBackgroundResource(R.drawable.rectangle_view_border);
         }
 
-        if (kilatModel.getH_paid2().equals(string1)) {
+        if (kilatModel.getH_paid2().equals(string1) && kilatModel.getH_paid2Confirm().equals(string1)) {
             holder.mPaindIndicator.setBackgroundResource(R.drawable.circle_view_background);
             holder.mPaidLine.setBackgroundResource(R.drawable.rectangle_view_bacground);
         } else {
@@ -79,7 +79,7 @@ public class KilatAdapter extends FirestoreRecyclerAdapter<KilatModel, KilatAdap
             holder.mPaidLine.setBackgroundResource(R.drawable.rectangle_view_border);
         }
 
-        if (kilatModel.getH_delivered2().equals(string1)) {
+        if (kilatModel.getH_delivered2().equals(string1) && kilatModel.getH_delivered2Confirm().equals(string1)) {
             holder.mDeliveredIndicator.setBackgroundResource(R.drawable.circle_view_background);
         } else {
             holder.mDeliveredIndicator.setBackgroundResource(R.drawable.circle_view_border);

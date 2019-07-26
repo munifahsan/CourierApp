@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@color/biruMuda"
+    android:orientation="vertical"
     tools:context=".ActivityOrderDetail.ui.DetailOrderActivity">
 
     <ProgressBar
@@ -30,10 +30,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 android:background="@color/putih"
-                app:titleTextAppearance="@style/Toolbar.TitleText"
                 app:layout_scrollFlags="scroll|enterAlways"
                 app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
                 app:title="Detail"
+                app:titleTextAppearance="@style/Toolbar.TitleText"
                 app:titleTextColor="@color/hitam" />
         </com.google.android.material.appbar.AppBarLayout>
 
@@ -52,8 +52,8 @@
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:paddingBottom="8dp"
-                    android:background="@color/putih">
+                    android:background="@color/putih"
+                    android:paddingBottom="8dp">
 
                     <TextView
                         android:id="@+id/no_order"
@@ -486,8 +486,8 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="23dp"
-                        android:layout_marginEnd="10dp"
                         android:layout_marginTop="9dp"
+                        android:layout_marginEnd="10dp"
                         android:layout_weight="1"
                         android:orientation="vertical">
 
@@ -501,8 +501,8 @@
                                 android:id="@+id/inputWeightEdt"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:hint="Input weight"
                                 android:enabled="false"
+                                android:hint="Input weight"
                                 android:inputType="number"
                                 android:textSize="14sp" />
 
@@ -600,7 +600,7 @@
                         <View
                             android:id="@+id/paidLine"
                             android:layout_width="3dp"
-                            android:layout_height="30dp"
+                            android:layout_height="64dp"
                             android:layout_below="@+id/paidIndicator"
                             android:layout_centerHorizontal="true"
                             android:layout_centerVertical="true"
@@ -694,7 +694,6 @@ tempat laundry, telah di timbang dan di beri harga"
                             android:background="@color/biruMuda" />
 
                         <Button
-                            android:visibility="gone"
                             android:id="@+id/prosesOkBtn"
                             android:layout_width="55dp"
                             android:layout_height="35dp"
@@ -703,7 +702,8 @@ tempat laundry, telah di timbang dan di beri harga"
                             android:layout_marginEnd="24dp"
                             android:background="@drawable/btn_ok_background_enable"
                             android:text="OK"
-                            android:textColor="@color/putih" />
+                            android:textColor="@color/putih"
+                            android:visibility="gone" />
                     </RelativeLayout>
 
                     <RelativeLayout
@@ -754,7 +754,7 @@ diproses dan siap diantar"
                     <RelativeLayout
                         android:id="@+id/paidRel"
                         android:layout_width="match_parent"
-                        android:layout_height="60dp"
+                        android:layout_height="95dp"
                         android:layout_below="@+id/doneRel"
                         android:layout_marginStart="24dp"
                         android:layout_toEndOf="@+id/indicator_rel">
@@ -785,10 +785,10 @@ diproses dan siap diantar"
 
                         <Button
                             android:id="@+id/paidOkBtn"
-                            android:layout_width="55dp"
+                            android:layout_width="match_parent"
                             android:layout_height="35dp"
-                            android:layout_alignParentEnd="true"
-                            android:layout_centerVertical="true"
+                            android:layout_below="@+id/paidTxt"
+                            android:layout_marginTop="4dp"
                             android:layout_marginEnd="24dp"
                             android:background="@drawable/btn_ok_background_enable"
                             android:text="OK"
@@ -798,7 +798,7 @@ diproses dan siap diantar"
                     <RelativeLayout
                         android:id="@+id/deliveredRel"
                         android:layout_width="match_parent"
-                        android:layout_height="60dp"
+                        android:layout_height="95dp"
                         android:layout_below="@+id/paidRel"
                         android:layout_marginStart="24dp"
                         android:layout_toEndOf="@+id/indicator_rel">
@@ -830,10 +830,11 @@ ke pelanggan"
 
                         <Button
                             android:id="@+id/deliverOkBtn"
-                            android:layout_width="55dp"
+                            android:enabled="false"
+                            android:layout_width="match_parent"
                             android:layout_height="35dp"
-                            android:layout_alignParentEnd="true"
-                            android:layout_centerVertical="true"
+                            android:layout_below="@+id/deliverTxt"
+                            android:layout_marginTop="4dp"
                             android:layout_marginEnd="24dp"
                             android:background="@drawable/btn_ok_background_enable"
                             android:text="OK"
@@ -849,7 +850,7 @@ ke pelanggan"
                     android:layout_below="@+id/konfirmasiRel"
                     android:layout_marginTop="12dp"
                     android:background="@color/putih"
-                    android:text="ASK ADMIN"
+                    android:text="HUBUNGI PELANGGAN"
                     android:textColor="@color/biruLaut" />
             </LinearLayout>
         </androidx.core.widget.NestedScrollView>

@@ -73,7 +73,9 @@ public class KilatFragment extends Fragment {
                 .whereEqualTo("h_on_proses2", "")
                 .whereEqualTo("h_done2", "")
                 .whereEqualTo("h_paid2", "")
+                .whereEqualTo("h_paid2Confirm", "")
                 .whereEqualTo("h_delivered2", "")
+                .whereEqualTo("h_delivered2Confirm", "")
                 .orderBy("a_uniq_id", Query.Direction.DESCENDING);
 
 
@@ -143,7 +145,9 @@ public class KilatFragment extends Fragment {
                 .whereEqualTo("h_on_proses2", "")
                 .whereEqualTo("h_done2", "")
                 .whereEqualTo("h_paid2", "")
+                .whereEqualTo("h_paid2Confirm", "")
                 .whereEqualTo("h_delivered2", "")
+                .whereEqualTo("h_delivered2Confirm", "")
                 .orderBy("a_uniq_id", Query.Direction.DESCENDING);
 
         if (query != null) {
@@ -188,7 +192,9 @@ public class KilatFragment extends Fragment {
                 .whereEqualTo("h_on_proses2", "")
                 .whereEqualTo("h_done2", "")
                 .whereEqualTo("h_paid2", "")
+                .whereEqualTo("h_paid2Confirm", "")
                 .whereEqualTo("h_delivered2", "")
+                .whereEqualTo("h_delivered2Confirm", "")
                 .whereEqualTo("a_jenis", "Kilat")
                 .orderBy("a_uniq_id", Query.Direction.DESCENDING);
 
@@ -229,7 +235,9 @@ public class KilatFragment extends Fragment {
                 .whereEqualTo("h_on_proses2", "1")
                 .whereEqualTo("h_done2", "")
                 .whereEqualTo("h_paid2", "")
+                .whereEqualTo("h_paid2Confirm", "")
                 .whereEqualTo("h_delivered2", "")
+                .whereEqualTo("h_delivered2Confirm", "")
                 .whereEqualTo("a_jenis", "Kilat")
                 .orderBy("a_uniq_id", Query.Direction.DESCENDING);
 
@@ -269,8 +277,10 @@ public class KilatFragment extends Fragment {
         query = ordersRef.whereEqualTo("h_accepted2", "1")
                 .whereEqualTo("h_on_proses2", "1")
                 .whereEqualTo("h_done2", "1")
-                .whereEqualTo("h_paid2", "")
-                .whereEqualTo("h_delivered2", "")
+//                .whereEqualTo("h_paid2", "")
+                .whereEqualTo("h_paid2Confirm", "")
+//                .whereEqualTo("h_delivered2", "")
+                .whereEqualTo("h_delivered2Confirm", "")
                 .whereEqualTo("a_jenis", "Kilat")
                 .orderBy("a_uniq_id", Query.Direction.DESCENDING);
 
@@ -310,8 +320,10 @@ public class KilatFragment extends Fragment {
         query = ordersRef.whereEqualTo("h_accepted2", "1")
                 .whereEqualTo("h_on_proses2", "1")
                 .whereEqualTo("h_done2", "1")
-                .whereEqualTo("h_paid2", "1")
-                .whereEqualTo("h_delivered2", "1")
+//                .whereEqualTo("h_paid2", "1")
+                .whereEqualTo("h_paid2Confirm", "1")
+//                .whereEqualTo("h_delivered2", "")
+                .whereEqualTo("h_delivered2Confirm", "")
                 .whereEqualTo("a_jenis", "Kilat")
                 .orderBy("a_uniq_id", Query.Direction.DESCENDING);
 

@@ -131,14 +131,16 @@ public class DetailOrderRepository implements DetailOrderRepositoryMvp {
                         String onProses = task.getResult().getString("h_on_proses2");
                         String done = task.getResult().getString("h_done2");
                         String paid = task.getResult().getString("h_paid2");
+                        String paidConfirm = task.getResult().getString("h_paid2Confirm");
                         String delivered = task.getResult().getString("h_delivered2");
+                        String deliveredConfirm = task.getResult().getString("h_delivered2Confirm");
 
-                        Log.d("nama data ", "" + name);
+                        Log.d("nama data ", "" + deliveredConfirm);
 
                         postEvent(DetailOrderEvents.onGetDataSuccess, null, name, phone, status, gender, room, dormitory, jenis, desc, timeNow, timeDone, weight, price, priceDiskon, diskon, bandana, topi, masker, kupluk, krudung, peci,
                                 kaos, kaosDalam, kemeja, bajuMuslim, jaket, sweter, gamis, handuk, sarungTangan, sapuTangan, celana, celanaDalam, celanaPendek, sarung,
                                 celanaOlahraga, rok, celanaLevis, kaosKaki, jasAlmamater, jas, selimutBesar, selimutKecil, bagCover, gordengKecil, gordengBesar, sepatu,
-                                bantal, tasKecil, tasBesar, spreiKecil, spreiBesar, accept, onProses, done, paid, delivered);
+                                bantal, tasKecil, tasBesar, spreiKecil, spreiBesar, accept, onProses, done, paid, paidConfirm, delivered, deliveredConfirm);
                     }
                 } else {
                     String errorMessage = task.getException().getMessage();
@@ -225,7 +227,7 @@ public class DetailOrderRepository implements DetailOrderRepositoryMvp {
     @Override
     public void updatePaid(String order_id) {
         Map<String, Object> userMap2 = new HashMap<>();
-        userMap2.put("h_paid2", "1");
+        userMap2.put("h_paid2Confirm", "1");
 
         firebaseFirestore.collection("Orders").document(order_id).update(userMap2).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
@@ -267,10 +269,10 @@ public class DetailOrderRepository implements DetailOrderRepositoryMvp {
                           String dataCelanaLevis, String dataKaosKaki,
                           String dataJasAlmamater, String dataJas, String dataSelimutBesar, String dataSelimutKecil, String dataBagCover,
                           String dataGordengKecil, String dataGordengBesar, String dataSepatu, String dataBantal, String dataTasKecil, String dataTasBesar,
-                          String dataSpreiKecil, String dataSpreiBesar, String dataAccept, String dataOnProses, String dataDone, String dataPaid, String delivered) {
+                          String dataSpreiKecil, String dataSpreiBesar, String dataAccept, String dataOnProses, String dataDone, String dataPaid, String dataPaidConfirm, String delivered, String deliveredConfirm) {
         DetailOrderEvents orderDetailEvents = new DetailOrderEvents();
         orderDetailEvents.setEventType(type);
-        Log.d("name masuk post", ""+name);
+        Log.d("name masuk post", ""+deliveredConfirm);
         if (errorMessage == null) {
             orderDetailEvents.setErrorMessage(errorMessage);
         }
@@ -329,7 +331,9 @@ public class DetailOrderRepository implements DetailOrderRepositoryMvp {
         orderDetailEvents.setDataOnProses(dataOnProses);
         orderDetailEvents.setDataDone(dataDone);
         orderDetailEvents.setDataPaid(dataPaid);
+        orderDetailEvents.setDataPaidConfirm(dataPaidConfirm);
         orderDetailEvents.setDataDelivered(delivered);
+        orderDetailEvents.setDataDeliveredConfirm(deliveredConfirm);
 
         EventBus eventBus = GreenRobotEventBus.getInstance();
         eventBus.post(orderDetailEvents);
@@ -337,11 +341,11 @@ public class DetailOrderRepository implements DetailOrderRepositoryMvp {
 
     @Override
     public void postEvent(int type, String errorMessage) {
-        postEvent(type, errorMessage, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null);
+        postEvent(type, errorMessage, null, null,null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null);
     }
 
     @Override
     public void postEvent(int type) {
-        postEvent(type, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null);
+        postEvent(type, null, null, null,null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null);
     }
 }

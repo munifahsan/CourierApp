@@ -70,7 +70,7 @@ public class ExpressAdapter extends FirestoreRecyclerAdapter<ExpressModel, Expre
             holder.mDoneLine.setBackgroundResource(R.drawable.rectangle_view_border);
         }
 
-        if (expressModel.getH_paid2().equals(string1)) {
+        if (expressModel.getH_paid2().equals(string1) && expressModel.getH_paid2Confirm().equals(string1)) {
             holder.mPaindIndicator.setBackgroundResource(R.drawable.circle_view_background);
             holder.mPaidLine.setBackgroundResource(R.drawable.rectangle_view_bacground);
         } else {
@@ -78,7 +78,7 @@ public class ExpressAdapter extends FirestoreRecyclerAdapter<ExpressModel, Expre
             holder.mPaidLine.setBackgroundResource(R.drawable.rectangle_view_border);
         }
 
-        if (expressModel.getH_delivered2().equals(string1)) {
+        if (expressModel.getH_delivered2().equals(string1) && expressModel.getH_delivered2Confirm().equals(string1)) {
             holder.mDeliveredIndicator.setBackgroundResource(R.drawable.circle_view_background);
         } else {
             holder.mDeliveredIndicator.setBackgroundResource(R.drawable.circle_view_border);

@@ -71,7 +71,7 @@ public class BiasaAdapter extends FirestoreRecyclerAdapter<BiasaModel, BiasaAdap
             orderHolder.mDoneLine.setBackgroundResource(R.drawable.rectangle_view_border);
         }
 
-        if (model.getH_paid2().equals(string1)) {
+        if (model.getH_paid2().equals(string1) && model.getH_paid2Confirm().equals(string1)) {
             orderHolder.mPaindIndicator.setBackgroundResource(R.drawable.circle_view_background);
             orderHolder.mPaidLine.setBackgroundResource(R.drawable.rectangle_view_bacground);
         } else {
@@ -79,7 +79,7 @@ public class BiasaAdapter extends FirestoreRecyclerAdapter<BiasaModel, BiasaAdap
             orderHolder.mPaidLine.setBackgroundResource(R.drawable.rectangle_view_border);
         }
 
-        if (model.getH_delivered2().equals(string1)) {
+        if (model.getH_delivered2().equals(string1) && model.getH_delivered2Confirm().equals(string1)) {
             orderHolder.mDeliveredIndicator.setBackgroundResource(R.drawable.circle_view_background);
         } else {
             orderHolder.mDeliveredIndicator.setBackgroundResource(R.drawable.circle_view_border);

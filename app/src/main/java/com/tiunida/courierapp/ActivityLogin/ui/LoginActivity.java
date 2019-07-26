@@ -29,10 +29,7 @@ public class LoginActivity extends AppCompatActivity implements LoginViewMvp{
     EditText mEdtTxtPass;
     @BindView(R.id.loginBtn)
     Button mLoginButton;
-    @BindView(R.id.login_register)
-    Button mLoginRegButton;
-    @BindView(R.id.forget_pass)
-    Button mLoginForgetPassButton;
+
 
     private LoginPresenterMvp mLoginPresenterMvp;
 
@@ -52,7 +49,6 @@ public class LoginActivity extends AppCompatActivity implements LoginViewMvp{
         mLoginPresenterMvp.onDestroy();
         super.onDestroy();
     }
-
 
     @OnClick(R.id.loginBtn)
     public void handleSignIn() {
@@ -84,8 +80,6 @@ public class LoginActivity extends AppCompatActivity implements LoginViewMvp{
         mEdtTxtEmail.setEnabled(enabeled);
         mEdtTxtPass.setEnabled(enabeled);
         mLoginButton.setEnabled(enabeled);
-        mLoginForgetPassButton.setEnabled(enabeled);
-        mLoginRegButton.setEnabled(enabeled);
     }
 
     public void navigateToMainScreen() {

@@ -12,7 +12,7 @@ public class DetailOrderEvents {
     private String errorMessage;
 
     private String dataWeight, dataPrice, dataPriceDiskon, dataDiskon;
-    private String dataAccept, dataOnProses, dataDone, dataPaid, dataDelivered;
+    private String dataAccept, dataOnProses, dataDone, dataPaid, dataPaidConfirm, dataDelivered, dataDeliveredConfirm;
     private String dataJenis;
     private String dataDesc;
     private String dataTimeNow;
@@ -163,6 +163,22 @@ public class DetailOrderEvents {
 
     public void setDataDelivered(String dataDelivered) {
         this.dataDelivered = dataDelivered;
+    }
+
+    public String getDataPaidConfirm() {
+        return dataPaidConfirm;
+    }
+
+    public void setDataPaidConfirm(String dataPaidConfirm) {
+        this.dataPaidConfirm = dataPaidConfirm;
+    }
+
+    public String getDataDeliveredConfirm() {
+        return dataDeliveredConfirm;
+    }
+
+    public void setDataDeliveredConfirm(String dataDeliveredConfirm) {
+        this.dataDeliveredConfirm = dataDeliveredConfirm;
     }
 
     public String getDataJenis() {
