@@ -37,11 +37,15 @@
                 app:titleTextColor="@color/hitam" />
         </com.google.android.material.appbar.AppBarLayout>
 
-        <androidx.core.widget.NestedScrollView
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/swlayout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
 
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -472,60 +476,7 @@
 
                 </RelativeLayout>
 
-                <LinearLayout
-                    android:id="@+id/inputWeightRel"
-                    android:layout_width="match_parent"
-                    android:layout_height="55dp"
-                    android:layout_below="@+id/diskonRel"
-                    android:layout_marginTop="8dp"
-                    android:background="@color/putih"
-                    android:orientation="horizontal">
 
-                    <LinearLayout
-                        android:id="@+id/weightLin"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="23dp"
-                        android:layout_marginTop="9dp"
-                        android:layout_marginEnd="10dp"
-                        android:layout_weight="1"
-                        android:orientation="vertical">
-
-                        <com.google.android.material.textfield.TextInputLayout
-                            android:id="@+id/text_input_dormitory"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            app:errorEnabled="true">
-
-                            <EditText
-                                android:id="@+id/inputWeightEdt"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:enabled="false"
-                                android:hint="Input weight"
-                                android:inputType="number"
-                                android:textSize="14sp" />
-
-                        </com.google.android.material.textfield.TextInputLayout>
-                    </LinearLayout>
-
-                    <RelativeLayout
-                        android:layout_width="55dp"
-                        android:layout_height="match_parent"
-                        android:layout_marginEnd="24dp">
-
-                        <Button
-                            android:id="@+id/saveWeightBtn"
-                            android:layout_width="55dp"
-                            android:layout_height="35dp"
-                            android:layout_alignParentEnd="true"
-                            android:layout_centerVertical="true"
-                            android:background="@drawable/btn_ok_background_enable"
-                            android:text="SAVE"
-                            android:textColor="@color/putih" />
-                    </RelativeLayout>
-
-                </LinearLayout>
 
                 <RelativeLayout
                     android:id="@+id/konfirmasiRel"
@@ -568,7 +519,7 @@
                         <View
                             android:id="@+id/prosesLine"
                             android:layout_width="3dp"
-                            android:layout_height="30dp"
+                            android:layout_height="79dp"
                             android:layout_below="@+id/prosesIndicator"
                             android:layout_centerHorizontal="true"
                             android:layout_centerVertical="true"
@@ -663,7 +614,7 @@ pada alamat kamar yang tertera"
                     <RelativeLayout
                         android:id="@+id/onProsesRel"
                         android:layout_width="match_parent"
-                        android:layout_height="60dp"
+                        android:layout_height="110dp"
                         android:layout_below="@+id/acceptRel"
                         android:layout_marginStart="24dp"
                         android:layout_toEndOf="@+id/indicator_rel">
@@ -685,6 +636,61 @@ pada alamat kamar yang tertera"
 tempat laundry, telah di timbang dan di beri harga"
                             android:textColor="@color/abuabu"
                             android:textSize="12sp" />
+
+                        <LinearLayout
+                            android:id="@+id/inputWeightRel"
+                            android:layout_width="match_parent"
+                            android:layout_height="55dp"
+                            android:layout_below="@+id/prosesTxt"
+
+                            android:background="@color/putih"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:id="@+id/weightLin"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="0dp"
+                                android:layout_marginTop="6dp"
+                                android:layout_marginEnd="10dp"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <com.google.android.material.textfield.TextInputLayout
+                                    android:id="@+id/text_input_dormitory"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    app:errorEnabled="true">
+
+                                    <EditText
+                                        android:id="@+id/inputWeightEdt"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:enabled="false"
+                                        android:hint="Input weight"
+                                        android:inputType="numberDecimal"
+                                        android:textSize="14sp" />
+
+                                </com.google.android.material.textfield.TextInputLayout>
+                            </LinearLayout>
+
+                            <RelativeLayout
+                                android:layout_width="55dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginEnd="24dp">
+
+                                <Button
+                                    android:id="@+id/saveWeightBtn"
+                                    android:layout_width="55dp"
+                                    android:layout_height="35dp"
+                                    android:layout_alignParentEnd="true"
+                                    android:layout_centerVertical="true"
+                                    android:background="@drawable/btn_ok_background_enable"
+                                    android:text="SAVE"
+                                    android:textColor="@color/putih" />
+                            </RelativeLayout>
+
+                        </LinearLayout>
 
                         <View
                             android:layout_width="match_parent"
@@ -854,5 +860,7 @@ ke pelanggan"
                     android:textColor="@color/biruLaut" />
             </LinearLayout>
         </androidx.core.widget.NestedScrollView>
+
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </LinearLayout>

@@ -3,10 +3,12 @@ package com.tiunida.courierapp.ActivityOrderDetail.ui;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -98,6 +100,8 @@ public class DetailOrderActivity extends AppCompatActivity implements DetailOrde
     @BindView(R.id.tgl_selesai_order_txt)
     TextView mTglSelesai;
 
+    @BindView(R.id.swlayout)
+    SwipeRefreshLayout swLayout;
     private String order_id;
 
     @Override
@@ -128,6 +132,27 @@ public class DetailOrderActivity extends AppCompatActivity implements DetailOrde
             @Override
             public void onClick(View view) {
                 finish();
+            }
+        });
+
+        // Mengeset properti warna yang berputar pada SwipeRefreshLayout
+        swLayout.setColorSchemeResources(R.color.biruLaut,R.color.biruGelap);
+
+        // Mengeset listener yang akan dijalankan saat layar di refresh/swipe
+        swLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+
+                getData();
+                Toast.makeText(DetailOrderActivity.this, "Refresh", Toast.LENGTH_SHORT).show();
+                // Handler untuk menjalankan jeda selama 5 detik
+                new Handler().postDelayed(new Runnable() {
+                    @Override public void run() {
+                        // Berhenti berputar/refreshing
+                        swLayout.setRefreshing(false);
+
+                    }
+                }, 1000);
             }
         });
 

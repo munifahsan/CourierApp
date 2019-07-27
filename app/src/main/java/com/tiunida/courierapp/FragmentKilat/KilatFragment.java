@@ -72,9 +72,9 @@ public class KilatFragment extends Fragment {
                 .whereEqualTo("a_jenis", "Kilat")
                 .whereEqualTo("h_on_proses2", "")
                 .whereEqualTo("h_done2", "")
-                .whereEqualTo("h_paid2", "")
+//                .whereEqualTo("h_paid2", "")
                 .whereEqualTo("h_paid2Confirm", "")
-                .whereEqualTo("h_delivered2", "")
+//                .whereEqualTo("h_delivered2", "")
                 .whereEqualTo("h_delivered2Confirm", "")
                 .orderBy("a_uniq_id", Query.Direction.DESCENDING);
 
