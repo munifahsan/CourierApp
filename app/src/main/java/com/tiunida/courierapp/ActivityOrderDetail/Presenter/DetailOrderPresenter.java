@@ -1,7 +1,9 @@
-package com.tiunida.courierapp.ActivityOrderDetail;
+package com.tiunida.courierapp.ActivityOrderDetail.Presenter;
 
 import android.util.Log;
 
+import com.tiunida.courierapp.ActivityOrderDetail.DetailOrderInteractor;
+import com.tiunida.courierapp.ActivityOrderDetail.DetailOrderInteractorMvp;
 import com.tiunida.courierapp.ActivityOrderDetail.events.DetailOrderEvents;
 import com.tiunida.courierapp.ActivityOrderDetail.ui.DetailOrderViewMvp;
 import com.tiunida.courierapp.EventBus.EventBus;
@@ -10,8 +12,6 @@ import com.tiunida.courierapp.EventBus.GreenRobotEventBus;
 import org.greenrobot.eventbus.Subscribe;
 
 import java.text.DecimalFormat;
-
-import static com.tiunida.courierapp.ActivityOrderDetail.events.DetailOrderEvents.onGetDataSuccess;
 
 public class DetailOrderPresenter implements DetailOrderPresenterMvp {
     private DetailOrderInteractorMvp mDetailOrderInteractorMvp;

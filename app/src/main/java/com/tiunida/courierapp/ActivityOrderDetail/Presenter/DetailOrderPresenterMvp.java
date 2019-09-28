@@ -1,4 +1,4 @@
-package com.tiunida.courierapp.ActivityOrderDetail;
+package com.tiunida.courierapp.ActivityOrderDetail.Presenter;
 
 public interface DetailOrderPresenterMvp {
     void onCreate();

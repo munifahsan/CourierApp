@@ -1,4 +1,4 @@
-package com.tiunida.courierapp.ActivityOrderDetail;
+package com.tiunida.courierapp.ActivityOrderDetail.Model;
 
 public interface DetailOrderRepositoryMvp {
     void getUserData();

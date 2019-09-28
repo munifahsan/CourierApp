@@ -1,5 +1,8 @@
 package com.tiunida.courierapp.ActivityOrderDetail;
 
+import com.tiunida.courierapp.ActivityOrderDetail.Model.DetailOrderRepository;
+import com.tiunida.courierapp.ActivityOrderDetail.Model.DetailOrderRepositoryMvp;
+
 public class DetailOrderInteractor implements DetailOrderInteractorMvp {
     private DetailOrderRepositoryMvp mDetailOrderRepositoryMvp;
 

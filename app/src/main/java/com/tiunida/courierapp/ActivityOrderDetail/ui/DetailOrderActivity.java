@@ -16,8 +16,8 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.tiunida.courierapp.ActivityOrderDetail.DetailOrderPresenter;
-import com.tiunida.courierapp.ActivityOrderDetail.DetailOrderPresenterMvp;
+import com.tiunida.courierapp.ActivityOrderDetail.Presenter.DetailOrderPresenter;
+import com.tiunida.courierapp.ActivityOrderDetail.Presenter.DetailOrderPresenterMvp;
 import com.tiunida.courierapp.R;
 
 import butterknife.BindView;
